@@ -6,7 +6,10 @@ import { QuizService } from "../services/quiz.service";
 
 @Controller('question')
 export class QuestionController {
-    constructor(private questionService: QuestionService, private quizService: QuizService) {}
+    constructor(
+        private readonly questionService: QuestionService, 
+        private readonly quizService: QuizService
+    ) {}
 
     @Post('')
     @UsePipes(ValidationPipe)
